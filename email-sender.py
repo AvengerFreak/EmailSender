@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+#variables stored in .env
 password = os.getenv('SENDER_PASSWORD') # generate app password in gmail account
 sender = os.getenv('SENDER_EMAIL') #gmail you used to generate app password
 receiver = os.getenv('RECIPIENT_EMAIL') # email of person or people you want to send message
@@ -25,4 +26,5 @@ def send_email(subject, body, sender, recipients, password):
     smtp_server.quit()
     print("email was sent")
 
-#send_email(subject, body, sender, recipients, password)
+print("sending email")
+send_email(subject, body, sender, recipients, password)
